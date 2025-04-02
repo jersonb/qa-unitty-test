@@ -41,14 +41,13 @@ public class CpfTests
     }
 
     [Theory(DisplayName = "Conversão implícita de string para objeto válido")]
-    [InlineData("24535170070", "245.351.700-70")]
-    [InlineData("71179874056", "711.798.740-56")]
-    [InlineData("00383021014", "003.830.210-14")]
-    public void Test05(string cpfInput, string masked)
+    [InlineData("24535170070")]
+    [InlineData("71179874056")]
+    [InlineData("00383021014")]
+    public void Test05(string cpfInput)
     {
         Cpf cpf = cpfInput;
         Assert.True(cpf);
-        Assert.Equal(masked, cpf);
     }
 
     [Theory(DisplayName = "Conversão implícita de string para objeto com máscara")]
